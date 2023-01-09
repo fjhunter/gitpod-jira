@@ -1,4 +1,4 @@
-image: gitpod/workspace-full
+image: fjaeger123/java-dev-container:1.0.1
 
 ports:
   - port: 2900
