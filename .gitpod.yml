@@ -4,6 +4,5 @@ ports:
   - port: 2900
     onOpen: open-preview
 tasks:
-  - init:
-      command: sh -c 'echo "deb https://packages.atlassian.com/debian/atlassian-sdk-deb/ stable contrib" >>/etc/apt/sources.list' && wget https://packages.atlassian.com/api/gpg/key/public && apt-key add public && apt update && apt install -y atlassian-plugin-sdk 
+  init: sh -c 'echo "deb https://packages.atlassian.com/debian/atlassian-sdk-deb/ stable contrib" >>/etc/apt/sources.list' && wget https://packages.atlassian.com/api/gpg/key/public && apt-key add public && apt update && apt install -y atlassian-plugin-sdk 
   command: atlas-run-standalone --product jira --jvmargs "-DdisableJiraEmail=false -Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n"
